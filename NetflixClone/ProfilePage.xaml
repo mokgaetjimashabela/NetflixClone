@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetflixClone.ProfilePage"
+             Title="ProfilePage">
+    <ScrollView>
+
+        <StackLayout Padding="10">
+            <Label Text="Profile" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+            <!-- Notifications Section -->
+            <Label Text="Notifications" FontSize="20" FontAttributes="Bold" Margin="0,10,0,0" />
+            <ListView x:Name="NotificationsList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" Detail="{Binding Message}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Downloaded Movies Section -->
+            <Label Text="Downloaded Movies" FontSize="20" FontAttributes="Bold" Margin="0,10,0,0" />
+            <ListView x:Name="DownloadedMoviesList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" Detail="{Binding Category}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- List of Movies Section -->
+            <Label Text="My List" FontSize="20" FontAttributes="Bold" Margin="0,10,0,0" />
+            <ListView x:Name="MyMoviesList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Title}" Detail="{Binding Category}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <!-- Reminders Section -->
+            <Label Text="Reminders" FontSize="20" FontAttributes="Bold" Margin="0,10,0,0" />
+            <ListView x:Name="RemindersList" HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <TextCell Text="{Binding Reminder}" Detail="{Binding Date}" />
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

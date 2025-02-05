@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetflixClone.HomePage"
+             Title="HomePage">
+    <StackLayout Padding="10">
+        <Label Text="Home" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+        <!-- Navigation Buttons and Dropdown Menu -->
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Center" Padding="10">
+            <Button Text="TV Shows" HorizontalOptions="Center" Margin="0,0,10,0" BackgroundColor="Red"  />
+            <Button Text="Movies" HorizontalOptions="Center" Margin="0,0,10,0"  BackgroundColor="Red"  />
+
+            <Picker Title="Categories" HorizontalOptions="Center" BackgroundColor="Red">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Action</x:String>
+                        <x:String>Comedy</x:String>
+                        <x:String>Drama</x:String>
+                        <x:String>Horror</x:String>
+                        <x:String>Sci-Fi</x:String>
+                        
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+        </StackLayout>
+        <!--Recently added movie will display here-->
+        <Frame Margin="10" Padding="10" BorderColor="Gray" CornerRadius="10" >
+            <StackLayout>
+                <ImageButton Source="xokitty.jpg" HorizontalOptions="Center" Clicked="OnMovieClicked" Aspect="AspectFill"
+  />
+                <Label Text="Recently Added:Romantic Movie" HorizontalOptions="Center" TextColor="Black" FontAttributes="Bold" Margin="0,10,0,0" />
+                <Label Text="Category:Comedy " HorizontalOptions="Center" TextColor="Black" />
+            </StackLayout>
+        </Frame>
+        
+
+        <!-- Scrollable View for Movies and TV Shows -->
+        <ScrollView>
+            <StackLayout>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        
+                    </Grid.RowDefinitions>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                       
+                    </Grid.ColumnDefinitions>
+
+                    <ScrollView Orientation="Horizontal">
+                        <StackLayout>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    
+                                    
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                   
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Example Movie/TV Show Frames -->
+                                <Label Text="Categories" FontSize="20" FontAttributes="Bold" Margin="10,20,10,10" />
+                                <ScrollView Orientation="Horizontal"
+                                            
+                                            HorizontalScrollBarVisibility="Never">
+                                    <HorizontalStackLayout Spacing="10">
+                                        <!-- Action -->
+                                        <Frame BorderColor="Gray" CornerRadius="5" HeightRequest="200" WidthRequest="150" Padding="0">
+                                            <StackLayout>
+                                                <ImageButton Source="action.jpeg" 
+                                        Clicked="OnMovieClicked" 
+                                        Aspect="AspectFill" 
+                                        HeightRequest="170"
+                                        WidthRequest="150" />
+                                                <Label Text="Action" 
+                                   HorizontalOptions="Center" 
+                                   TextColor="Gray"
+                                   Margin="0,5,0,0" />
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <!-- Comedy -->
+                                        <Frame BorderColor="Gray" CornerRadius="5" HeightRequest="200" WidthRequest="150" Padding="0">
+                                            <StackLayout>
+                                                <ImageButton Source="comedy.jpg" 
+                                        Clicked="OnMovieClicked" 
+                                        Aspect="AspectFill"
+                                        HeightRequest="170"
+                                        WidthRequest="150" />
+                                                <Label Text="Comedy" 
+                                   HorizontalOptions="Center" 
+                                   TextColor="Gray"
+                                   Margin="0,5,0,0" />
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <!-- Drama -->
+                                        <Frame BorderColor="Gray" CornerRadius="5" HeightRequest="200" WidthRequest="150" Padding="0">
+                                            <StackLayout>
+                                                <ImageButton Source="drama.jpg" 
+                                        Clicked="OnMovieClicked" 
+                                        Aspect="AspectFill"
+                                        HeightRequest="170"
+                                        WidthRequest="150" />
+                                                <Label Text="Drama" 
+                                   HorizontalOptions="Center" 
+                                   TextColor="Gray"
+                                   Margin="0,5,0,0" />
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <!-- Horror -->
+                                        <Frame BorderColor="Gray" CornerRadius="5" HeightRequest="200" WidthRequest="150" Padding="0">
+                                            <StackLayout>
+                                                <ImageButton Source="horror.jpg" 
+                                        Clicked="OnMovieClicked" 
+                                        Aspect="AspectFill"
+                                        HeightRequest="170"
+                                        WidthRequest="150" />
+                                                <Label Text="Horror" 
+                                   HorizontalOptions="Center" 
+                                   TextColor="Gray"
+                                   Margin="0,5,0,0" />
+                                            </StackLayout>
+                                        </Frame>
+
+                                        <!-- Sci-Fi -->
+                                        <Frame BorderColor="Gray" CornerRadius="5" HeightRequest="200" WidthRequest="150" Padding="0">
+                                            <StackLayout>
+                                                <ImageButton Source="scifi.jpg" 
+                                        Clicked="OnMovieClicked" 
+                                        Aspect="AspectFill"
+                                        HeightRequest="170"
+                                        WidthRequest="150" />
+                                                <Label Text="Sci-Fi" 
+                                   HorizontalOptions="Center" 
+                                   TextColor="Gray"
+                                   Margin="0,5,0,0" />
+                                            </StackLayout>
+                                        </Frame>
+                                    </HorizontalStackLayout>
+                                </ScrollView>
+                            </Grid>
+                            
+                        </StackLayout>
+                    </ScrollView>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

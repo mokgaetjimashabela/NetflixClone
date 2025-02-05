@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NetflixClone.SearchPage"
+             Title="SearchPage">
+    <StackLayout Padding="10">
+        <Label Text="Search" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+
+        <!-- Search Bar -->
+        <SearchBar x:Name="MovieSearchBar" Placeholder="Search for movies..." TextChanged="OnSearchBarTextChanged" />
+
+        <!-- CollectionView for Search Results -->
+        <CollectionView x:Name="SearchResultsCollectionView">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout Padding="5">
+                        <Label Text="{Binding Title}" FontAttributes="Bold" />
+                        <Label Text="{Binding Category}" TextColor="Gray" />
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>
